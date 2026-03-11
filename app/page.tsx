@@ -25,7 +25,13 @@ export default function Home() {
       {isMobile ? (
         <>
           <About />
+          {/* Mobile Divider */}
+          <div className="my-2 mx-10 border-t md:hidden"></div>
+
           <Projects />
+          {/* Mobile Divider */}
+          <div className="my-2 mx-10 border-t md:hidden"></div>
+
           <Contact />
         </>
       ) : (
