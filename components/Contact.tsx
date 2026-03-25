@@ -61,7 +61,7 @@ export default function Contact() {
           <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
 
           {/* Qucik Links */}
-          <div className="flex flex-wrap gap-3 mt-4">
+          <div className="flex flex-wrap sm:gap-1 md:gap-3 mt-4">
             <a
               href="https://github.com/Linn-Latt" target="_blank"
               className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 dark:border-gray-600
@@ -144,31 +144,33 @@ export default function Contact() {
               id="message" name="message" value={formData.message} onChange={handleChange} required
               rows={2}
               className="w-full px-4 pt-3 border-b bg-primary focus:outline-none focus:border-accent transistion"
-              placeholder="Tell me about your project or just say hello..."
+              placeholder="Your Messages ..."
             />
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-1/3 flex items-center justify-center gap-2 px-6 py-3 
-                       bg-[#C07F00] dark:bg-[#C07F00] hover:opacity-80 disabled:opacity-40
-                       text-white font-medium rounded-lg transition-all duration-200
-                       focus:ring-2 focus:ring-[#C07F00]/50 focus:ring-offset-2"
-          >
-            {isSubmitting ? (
-              <>
-                <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
-                Sending...
-              </>
-            ) : (
-              <>
-                <Send size={16} />
-                Send Message
-              </>
-            )}
-          </button>
+          <div className="flex md:justify-end">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3 
+                        bg-[#C07F00] dark:bg-[#C07F00] hover:opacity-80 disabled:opacity-40
+                        text-white font-medium rounded-lg transition-all duration-200
+                        focus:ring-2 focus:ring-[#C07F00]/50 focus:ring-offset-2"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send size={16} />
+                  Send Message
+                </>
+              )}
+            </button>
+          </div>
 
           {/* Status Messages */}
           {submitStatus === 'success' && (
@@ -197,8 +199,7 @@ export default function Contact() {
             href="mailto:your.email@example.com"
             className="inline-flex items-center gap-2 text-[#C07F00] dark:text-[#D8A25E] hover:underline"
           >
-            <Mail size={16} />
-            your.email@example.com
+            <Mail size={16} /> linnlatt.ww11@gmail.com
           </a>
         </div>
       </div>

@@ -143,7 +143,9 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
             <ArrowDownToLine />
           </a>
 
-          <ThemeToggle />
+          <div className="mt-1 px-1">
+            <ThemeToggle />
+          </div>
         </nav>
       </aside>
 

@@ -56,7 +56,7 @@ export default function About() {
                     <div className={`mb-8 transition-all duration-1000 ${showAbout ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
                         {/* <h2 className="text-3xl font-bold mb-4">About Me</h2> */}
                         <p className="text-secondary leading-relaxed text-justify">
-                            I'm <strong>Linn Latt</strong>, a passionate Software Developer specializing in
+                            I'm <strong>Linn Latt</strong>, a passionate Web Developer specializing in
                             <span className="text-accent cursor-pointer"> React </span>
                             and <span className="text-accent cursor-pointer">JavaScript</span>.
                             With a strong foundation in both front-end and back-end development and hands-on experience with
@@ -69,7 +69,7 @@ export default function About() {
                     </div>
 
                     {/* Mobile Divider */}
-                    <div className="my-6 border-t md:hidden"></div>
+                    {/* <div className="my-6 border-t md:hidden"></div> */}
 
                     {/* Experience Section */}
                     <div className={`transition-all duration-1000 ${showExperience ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
