@@ -97,7 +97,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
                 )}
               </li>
               <li>
-                <a href="/resume.pdf" download className="flex items-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <a href="/pdf/LinnLattWinWin.pdf" download className="flex items-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-800">
                   <ArrowDownToLine />
                   Download Resume
                 </a>
@@ -135,7 +135,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
           <div className="h-px bg-gray-200 dark:bg-gray-800 my-1" />
 
           <a
-            href="/resume.pdf"
+            href="/pdf/LinnLattWinWin.pdf"
             download
             className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             title="Download Resume"
