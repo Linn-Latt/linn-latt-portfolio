@@ -33,7 +33,7 @@ const projects: Project[] = [
         id: 1,
         title: "Shwe Min",
         type: "work",
-        description: "Clinic Laboratory Management System between clinics and labs. Streamlines lab tests, result delivery, and result management.",
+        description: "Management System between clinics and labs streamling lab tests and result management.",
         image: "/images/sm.png",
         technologies: ["Vue.js", "TypeScript", "Laravel"],
     },
@@ -49,7 +49,7 @@ const projects: Project[] = [
         id: 3,
         title: "SafeSpace",
         type: "personal",
-        description: "Mental Health Support Mobile App with role-based access for both mental health professionals and users.",
+        description: "Mental Health Support Mobile App with role-based access for both professionals and users.",
         image: "/images/ss.png",
         technologies: ["React Native", "TypeScript", "Laravel"],
         githubUrl: [
@@ -61,20 +61,20 @@ const projects: Project[] = [
         id: 4,
         title: "Portfolio Website",
         type: "personal",
-        description: "Personal portfolio built with Next.js and TypeScript. Features responsive design, dark mode, and smooth animations.",
+        description: "A personal portfolio website built with Next.js. It features a responsive design, dark mode support, and smooth animations for a modern user experience.",
         image: "/images/p.png",
         technologies: ["React.js", "Next.js", "Tailwind CSS"],
-        liveUrl: "#",
+        liveUrl: "https://linn-latt-portfolio.vercel.app/",
         githubUrl: "https://github.com/Linn-Latt/linn-latt-portfolio"
     },
     {
         id: 5,
         title: "NoteIt",
         type: "personal",
-        description: "A note-taking app where users can create notebooks, write and manage notes with a clean and organized interface.",
+        description: "A note-taking application that allows users to create notebooks and write, organize, and manage notes through a clean and well-structured interface.",
         image: "/images/noteit.png",
         technologies: ["React.js", "Next.js", "NeonDB", "Prisma"],
-        liveUrl: "#",
+        liveUrl: "https://noteit-opal.vercel.app/",
         githubUrl: "https://github.com/Linn-Latt/noteit"
     },
 ];
@@ -92,7 +92,6 @@ const getTechIcon = (tech: string): React.ReactElement | null => {
         'MongoDB': <SiMongodb className="w-4 h-4" />,
         'Next.js': <SiNextdotjs className="w-4 h-4" />,
         'Tailwind CSS': <SiTailwindcss className="w-4 h-4" />,
-        'Chart.js': <SiChartdotjs className="w-4 h-4" />,
         'Express': <SiExpress className="w-4 h-4" />,
         'NeonDB': <Database className="w-4 h-4" />,
         'Prisma': <SiPrisma className="w-4 h-4" />,
@@ -122,8 +121,8 @@ export default function Projects() {
     return (
         <section id="projects" className="min-h-screen py-10 px-10 md:px-0 max-w-4xl mx-auto scroll-mt-14">
             <div className="mb-4">
-                <h2 className="text-3xl font-bold mb-4">Projects</h2>
-                <p className="text-secondary">Here are some of my recent projects that showcase my skills and experience.</p>
+                <h2 className="text-3xl font-bold mb-4 ml-4">Projects</h2>
+                <p className="text-secondary ml-4">Here are some of my recent projects that highlight my skills and hands-on experience.</p>
             </div>
 
             {/* Mobile-first Slider */}
