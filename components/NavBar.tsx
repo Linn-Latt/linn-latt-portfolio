@@ -15,7 +15,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
   return (
     <>
       {/* Mobile Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#343131] border-b border-gray-200 dark:border-gray-800 lg:hidden">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#343131] border-b border-gray-300 dark:border-stone-800 lg:hidden">
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="text-xl font-semibold">Linn Latt</h1>
           <div className="flex items-center gap-2">
@@ -40,7 +40,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <nav className="border-t border-gray-200 text-center dark:border-gray-800 bg-white dark:bg-[#343131]">
+          <nav className="border-b border-gray-400 text-center dark:border-stone-900 bg-white dark:bg-[#343131]">
             <ul className="py-2">
               <li>
                 {isMobile ? (
@@ -97,7 +97,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
                 )}
               </li>
               <li>
-                <a href="/pdf/LinnLattWinWin.pdf" download className="flex items-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <a href="/pdf/LinnLattWinWin.pdf" download className="flex items-center justify-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-800">
                   <ArrowDownToLine />
                   Download Resume
                 </a>
