@@ -39,7 +39,7 @@ export default function Home() {
           <Contact />
         </>
       ) : (
-        <div className="lg:pl-32">
+        <div className="h-screen flex items-center justify-center lg:pl-32">
           {activeSection === 'about' && <About />}
           {activeSection === 'projects' && <Projects />}
           {activeSection === 'contact' && <Contact />}

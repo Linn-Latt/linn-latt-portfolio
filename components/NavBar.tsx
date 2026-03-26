@@ -108,7 +108,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
       </header>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex fixed left-20 top-1/2 -translate-y-1/2 z-50">
+      <aside className="hidden lg:flex fixed left-[calc(50%-496px)] top-1/2 -translate-y-1/2 z-50">
         <nav className="flex flex-col gap-1 py-3 bg-white dark:bg-[#292727] border border-gray-200 dark:border-black rounded-2xl shadow-xl">
           <button
             onClick={() => onNavigate('about')}
