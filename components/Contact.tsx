@@ -55,7 +55,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="min-h-screen lg:min-h-0 px-10 py-10 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
+    <section id="contact" className="min-h-screen md:min-h-0 px-10 py-12 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>

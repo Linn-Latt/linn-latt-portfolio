@@ -119,7 +119,7 @@ export default function Projects() {
     }
 
     return (
-    <section id="projects" className="min-h-screen lg:min-h-0 py-10 px-10 md:px-0 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
+    <section id="projects" className="min-h-screen md:min-h-0 py-10 px-10 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
             <div className="mb-4">
                 <h2 className="text-3xl font-bold mb-4 ml-4">Projects</h2>
                 <p className="text-secondary ml-4">Here are some of my recent projects that highlight my skills and hands-on experience.</p>
@@ -310,7 +310,7 @@ export default function Projects() {
                 </div>
 
                 {/* Bottom Navigation: Prev + Dots + Next */}
-                <div className="flex justify-center items-center mt-6 gap-4">
+                <div className="flex justify-center items-center mt-2 md:mt-6 gap-4">
                     {/* Previous Button */}
                     <button
                         onClick={prevSlide}

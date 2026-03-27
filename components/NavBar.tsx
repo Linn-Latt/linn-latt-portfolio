@@ -98,7 +98,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
               </li>
               <li>
                 <a href="/pdf/LinnLattWinWin.pdf" download className="flex items-center justify-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <ArrowDownToLine />
+                  {/* <ArrowDownToLine /> */}
                   Download Resume
                 </a>
               </li>

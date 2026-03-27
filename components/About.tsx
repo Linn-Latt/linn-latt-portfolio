@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const intro = "Hi, I'm Linn Latt. I'm a Web Developer.";
 
-export default function About() {
+export default function About({ onFinish }: { onFinish?: () => void }) {
     const [text, setText] = useState("");
     const [charIndex, setCharIndex] = useState(0);
     const [finished, setFinished] = useState(false);
@@ -33,6 +33,8 @@ export default function About() {
 
             const experienceTimer = setTimeout(() => {
                 setShowExperience(true);
+
+                onFinish?.();
             }, 1000);
 
             return () => {
@@ -43,7 +45,7 @@ export default function About() {
     }, [finished]);
 
     return (
-        <section id="about" className="min-h-screen lg:min-h-0 py-10 px-10 md:px-0 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
+        <section id="about" className="min-h-screen md:min-h-0 py-10 px-10 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
 
             {/* Inner container to control layout */}
             <div className="w-full">
