@@ -58,7 +58,7 @@ export default function Contact() {
     <section id="contact" className="min-h-screen md:min-h-0 px-10 py-12 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl font-bold mb-4 pt-6">Get In Touch</h2>
 
           {/* Qucik Links */}
           <div className="flex flex-wrap sm:gap-1 md:gap-3 mt-4">
@@ -153,7 +153,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3 
+              className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-2 
                         bg-[#C07F00] dark:bg-[#C07F00] hover:opacity-80 disabled:opacity-40
                         text-white font-medium rounded-lg transition-all duration-200
                         focus:ring-2 focus:ring-[#C07F00]/50 focus:ring-offset-2"
@@ -192,7 +192,7 @@ export default function Contact() {
 
         {/* Alternative Contact Info */}
         <div className="mt-10 text-center">
-          <p className="text-secondary mb-4">
+          <p className="text-secondary mb-1">
             Or reach out directly:
           </p>
           <a

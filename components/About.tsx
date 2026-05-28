@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const intro = "Hi, I'm Linn Latt. I'm a Web Developer.";
+const intro = "Hi, I'm Linn Latt. I'm a Developer.";
 
 export default function About({ onFinish }: { onFinish?: () => void }) {
     const [text, setText] = useState("");
@@ -64,7 +64,7 @@ export default function About({ onFinish }: { onFinish?: () => void }) {
                             <div className={`mb-8 transition-all duration-1000 ${showAbout ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
                                 {/* <h2 className="text-3xl font-bold mb-4">About Me</h2> */}
                                 <p className="text-secondary leading-relaxed text-justify">
-                                    I'm <strong>Linn Latt</strong>, a dedicated Web Developer with a strong focus on
+                                    I'm <strong>Linn Latt</strong>, a dedicated full stack Developer with a strong focus on
                                     <span className="text-accent cursor-pointer"> React </span>
                                     and <span className="text-accent cursor-pointer">JavaScript</span>.
                                     I have solid experience in both front-end and back-end development, working with
