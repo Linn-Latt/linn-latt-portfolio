@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-import { Send, Mail, User, MessageSquare, Phone, Github } from 'lucide-react'
+import { useState } from 'react';
+import { Send, Mail, User, MessageSquare, Phone, Github } from 'lucide-react';
 
 interface FormData {
-  name: string
-  email: string
-  message: string
+  name: string;
+  email: string;
+  message: string;
 }
 
 export default function Contact() {
@@ -14,22 +14,24 @@ export default function Contact() {
     name: '',
     email: '',
     message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }))
+    }));
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
 
     try {
       const response = await fetch('/api/contact', {
@@ -41,21 +43,24 @@ export default function Contact() {
       })
 
       if (response.ok) {
-        setSubmitStatus('success')
+        setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' })
       } else {
-        setSubmitStatus('error')
+        const data = await response.json();
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
+        setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Error sending message:', error)
-      setSubmitStatus('error')
+      setErrorMessage('Something went wrong. Please try again.');
+      console.error('Error sending message:', error);
+      setSubmitStatus('error');
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
   return (
-    <section id="contact" className="min-h-screen md:min-h-0 px-10 py-12 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
+    <section id="contact" className="max-h-screen md:min-h-0 px-6 md:px-10 py-12 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-4 pt-6">Get In Touch</h2>
@@ -176,16 +181,14 @@ export default function Contact() {
           {submitStatus === 'success' && (
             <div className="p-4 bg-green-100 dark:bg-green-900 border border-green-300 dark:border-green-700 rounded-lg">
               <p className="text-green-800 dark:text-green-200 text-center">
-                Thank you! Your message has been sent successfully. I'll get back to you soon.
+                Thank you! Your message has been sent successfully. I will get back to you soon.
               </p>
             </div>
           )}
 
           {submitStatus === 'error' && (
             <div className="p-4 bg-red-100 dark:bg-red-900 border border-red-300 dark:border-red-700 rounded-lg">
-              <p className="text-red-800 dark:text-red-200 text-center">
-                Sorry, there was an error sending your message. Please try again or contact me directly.
-              </p>
+              <p className="text-red-800 dark:text-red-200 text-center">{errorMessage}</p>
             </div>
           )}
         </form>
@@ -204,5 +207,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,16 +1,16 @@
 'use client'
 
-import { useState } from 'react'
-import { ThemeToggle } from './ThemeToggle'
-import { ArrowDownToLine, FolderOpenDot, Mail, User } from 'lucide-react'
+import { useState } from 'react';
+import { ThemeToggle } from './ThemeToggle';
+import { ArrowDownToLine, FolderOpenDot, Mail, User } from 'lucide-react';
 
 interface NavBarProps {
-  onNavigate: (section: string) => void
-  isMobile: boolean
+  onNavigate: (section: string) => void;
+  isMobile: boolean;
 }
 
 export function NavBar({ onNavigate, isMobile }: NavBarProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -115,21 +115,21 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
             className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             title="About"
           >
-            <User />
+            <User size={22} />
           </button>
           <button
             onClick={() => onNavigate('projects')}
             className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             title="Projects"
           >
-            <FolderOpenDot />
+            <FolderOpenDot size={22} />
           </button>
           <button
             onClick={() => onNavigate('contact')}
             className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             title="Contact"
           >
-            <Mail />
+            <Mail size={22} />
           </button>
 
           <div className="h-px bg-gray-200 dark:bg-gray-800 my-1" />
@@ -140,7 +140,7 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
             className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             title="Download Resume"
           >
-            <ArrowDownToLine />
+            <ArrowDownToLine size={22} />
           </a>
 
           <div className="mt-1 px-1">
@@ -152,5 +152,5 @@ export function NavBar({ onNavigate, isMobile }: NavBarProps) {
       {/* Mobile spacer */}
       <div className="h-14 lg:hidden" />
     </>
-  )
+  );
 }

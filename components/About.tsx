@@ -2,20 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-const intro = "Hi, I'm Linn Latt. I'm a Developer.";
+const intro = "Hi, I'm Linn Latt. I'm a Full Stack Developer.";
 
 export default function About({ onFinish }: { onFinish?: () => void }) {
     const [text, setText] = useState("");
     const [charIndex, setCharIndex] = useState(0);
-    const [finished, setFinished] = useState(false);
     const [showAbout, setShowAbout] = useState(false);
     const [showExperience, setShowExperience] = useState(false);
+    const finished = charIndex >= intro.length;
 
     useEffect(() => {
-        if (charIndex >= intro.length) {
-            setFinished(true);
-            return;
-        }
+        if (finished) return;
 
         const timeout = setTimeout(() => {
             setText(prev => prev + intro[charIndex]);
@@ -23,7 +20,7 @@ export default function About({ onFinish }: { onFinish?: () => void }) {
         }, 80);
 
         return () => clearTimeout(timeout);
-    }, [charIndex]);
+    }, [charIndex, finished]);
 
     useEffect(() => {
         if (finished) {
@@ -45,13 +42,13 @@ export default function About({ onFinish }: { onFinish?: () => void }) {
     }, [finished]);
 
     return (
-        <section id="about" className="min-h-screen md:min-h-0 py-10 px-10 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
+        <section id="about" className="md:min-h-0 pt-5 md:pt-10 pb-10 px-6 md:px-10 max-w-4xl mx-auto scroll-mt-14 w-full overflow-y-auto">
 
             {/* Inner container to control layout */}
             <div className="w-full">
                 {/* Typing Title */}
                 <div className="h-[80px] flex items-end">
-                    <h1 className="text-3xl md:text-4xl font-bold">
+                    <h1 className="text-xl md:text-4xl font-bold">
                         {text}
                         <span className="animate-pulse">|</span>
                     </h1>
@@ -63,34 +60,57 @@ export default function About({ onFinish }: { onFinish?: () => void }) {
                             {/* About Content */}
                             <div className={`mb-8 transition-all duration-1000 ${showAbout ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
                                 {/* <h2 className="text-3xl font-bold mb-4">About Me</h2> */}
-                                <p className="text-secondary leading-relaxed text-justify">
-                                    I'm <strong>Linn Latt</strong>, a dedicated full stack Developer with a strong focus on
-                                    <span className="text-accent cursor-pointer"> React </span>
-                                    and <span className="text-accent cursor-pointer">JavaScript</span>.
-                                    I have solid experience in both front-end and back-end development, working with
-                                    <span className="text-accent cursor-pointer"> React</span>,
-                                    <span className="text-accent cursor-pointer"> Vue</span>,
-                                    <span className="text-accent cursor-pointer"> TypeScript</span>, and
-                                    <span className="text-accent cursor-pointer"> Laravel</span>.
-                                    I build clean, scalable, and user-focused web applications that solve real-world problems.
+                                <p className="text-secondary leading-relaxed">
+                                    I'm <strong>Linn Latt</strong>, a full stack developer focused on
+                                    <span className="text-accent cursor-pointer"> JavaScript</span> and
+                                    <span className="text-accent cursor-pointer"> TypeScript</span>, building
+                                    clean, user-focused web apps from front end to back end.
                                 </p>
                             </div>
 
                             {/* Experience Section */}
                             <div className={`transition-all duration-1000 ${showExperience ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-                                <h2 className="text-2xl font-bold mb-3">Experience</h2>
-                                <div className="flex flex-col md:flex-row gap-3 md:gap-10">
-                                    <div className="text-secondary md:w-[25%] flex-shrink-0">
-                                        2025 August - 2026 February
+                                <h2 className="text-2xl font-bold mb-4">Experience</h2>
+
+                                {/* Experience Entry 1 */}
+                                <div className="flex flex-col md:flex-row gap-1 md:gap-6 border-l-2 border-[var(--accent)] md:border-l-0 pl-4 md:pl-0 pb-5 md:pb-0 relative">
+                                    {/* Timeline dot - mobile only */}
+                                    <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-[var(--accent)] md:hidden" />
+                                    <div className="text-secondary md:w-[20%] flex-shrink-0">
+                                        <span className="text-xs md:text-base font-medium tracking-wide uppercase md:normal-case md:tracking-normal">
+                                            Aug 2025 - Feb 2026
+                                        </span>
                                     </div>
-                                    <div className="md:w-[75%] text-justify">
-                                        <strong className="text-lg block mb-2">OJT Full-Stack Developer</strong>
-                                        <p className="text-secondary mb-2">Min Shin Saw Co.Ltd</p>
-                                        <ul className="text-secondary leading-relaxed">
-                                            <li>- Built and enhanced dynamic admin dashboards, RESTful APIs, and CMS-driven website.</li>
-                                            <li>- Contributed to scalable multi-domain systems and mobile API integrations across multiple projects.</li>
-                                            <li>- Improved application performance through feature development, frontend implementation, and effective debugging.</li>
-                                            <li>- Collaborated within team environments while maintaining and supporting live production systems.</li>
+                                    <div className="md:w-[80%] md:text-justify">
+                                        <div className="text-lg block mb-1 md:flex justify-between">
+                                            <strong>OJT + Junior Full-Stack Developer</strong>
+                                            <p className="text-secondary text-sm md:text-base">Min Shin Saw Co.Ltd</p>
+                                        </div>
+                                        <ul className="text-secondary leading-relaxed text-sm md:text-base mt-1 space-y-1 md:space-y-0">
+                                            <li>- Contribute to the Multi-Domain System, focusing on React API integration and API development.</li>
+                                            <li>- Troubleshoot and resolve issues in the Clinic Management System.</li>
+                                            <li>- Collaborated within team environments while maintaining live production systems.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Experience Entry 2 */}
+                                <div className="flex flex-col md:flex-row gap-1 md:gap-6 mt-0 md:mt-4 border-l-2 border-[var(--accent)] md:border-l-0 pl-4 md:pl-0 relative">
+                                    {/* Timeline dot - mobile only */}
+                                    <div className="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-[var(--accent)] md:hidden" />
+                                    <div className="text-secondary md:w-[20%] flex-shrink-0">
+                                        <span className="text-xs md:text-base font-medium tracking-wide uppercase md:normal-case md:tracking-normal">
+                                            Jun 2026 - Present
+                                        </span>
+                                    </div>
+                                    <div className="md:w-[80%] md:text-justify">
+                                        <div className="text-lg block mb-1 md:flex justify-between">
+                                            <strong>Junior Web Developer</strong>
+                                            <p className="text-secondary text-sm md:text-base">Brain Myanmar Co.Ltd</p>
+                                        </div>
+                                        <ul className="text-secondary leading-relaxed text-sm md:text-base mt-1 space-y-1 md:space-y-0">
+                                            <li>- Contribute to database design, API development, and API integration for the Work Done Tracker project.</li>
+                                            <li>- Contribute to maintaining and enhancing the Search System and related Admin Panel.</li>
                                         </ul>
                                     </div>
                                 </div>
