@@ -25,9 +25,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate message length
-    if (message.length < 10) {
+    if (message.length < 5) {
       return NextResponse.json(
-        { error: "Message must be at least 10 characters long" },
+        { error: "Message must be at least 5 characters long" },
         { status: 400 }
       );
     }
