@@ -34,6 +34,13 @@ export default function Home() {
     };
   }, [isMobile, aboutFinished]);
 
+  useEffect(() => {
+    fetch('/api/visit', { method: 'POST' })
+      .then(r => r.json())
+      .then(data => console.log('Visit notification:', data))
+      .catch(err => console.error('Visit notification failed:', err));
+  }, []);
+
   return (
     <main
       className={`
