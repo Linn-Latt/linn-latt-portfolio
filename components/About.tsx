@@ -83,7 +83,7 @@ export default function About({ onFinish }: { onFinish?: () => void }) {
                                     </div>
                                     <div className="md:w-[80%] md:text-justify">
                                         <div className="text-lg block mb-1 md:flex justify-between">
-                                            <strong>OJT Full-Stack Developer</strong>
+                                            <strong>OJT + Junior Full-Stack Developer</strong>
                                             <p className="text-secondary text-sm md:text-base">Min Shin Saw Co.Ltd</p>
                                         </div>
                                         <ul className="text-secondary leading-relaxed text-sm md:text-base mt-1 space-y-1 md:space-y-0">
